@@ -1,7 +1,7 @@
 TodoMVC jQuery
 ==============
 
-URL: https://hyperdev.com/#!/project/maze-stealer
+URL: https://glitch.com/#!/project/long-engineer
 
 This is the workspace for the watchandcode.com
 screencast series on the jQuery version of TodoMVC.
@@ -44,12 +44,7 @@ How to Read Source Code
 
 **Unfamiliar concepts**
 
-1. jQuery
-2. Router (Director.js)
-3. Handlebars
-4. uuid
-5. localStorage
-6. JSON
+1. Router (Director.js)
 
 **Useful links**
 
@@ -57,6 +52,4 @@ How to Read Source Code
 
 **Notes**
 
-1. How does util.store() work?
-2. What are todoTemplate() and footerTemplate()? How do they work?
-3. I think this was probably already covered in one of the earlier videos, but I'll need to review how the App.filter string is set and the role it plays in the bigger picture. I'm not feeling confident yet about having understood the filter (not the .filter() method on arrays, but the string filter used here).
+1. Next step is to rebuild the app function-by-function until eventually I'm able to rebuild the entire app from memory.
