@@ -54,7 +54,7 @@ jQuery(function ($) {
 		},
 		bindEvents: function () {
 			$('#new-todo').on('keyup', this.create.bind(this));
-			$('#toggle-all').on('change', this.toggleAll.bind(this));
+			$('#toggle-all').on('click', this.toggleAll.bind(this));
 			$('#footer').on('click', '#clear-completed', this.destroyCompleted.bind(this));
 			$('#todo-list')
 				.on('change', '.toggle', this.toggle.bind(this))
@@ -114,7 +114,7 @@ jQuery(function ($) {
 
 			return this.todos;
 		},
-		destroyCompleted: function () {
+		destroyCompleted: function (e) {
 			this.todos = this.getActiveTodos();
 			this.filter = 'all';
 			this.render();
