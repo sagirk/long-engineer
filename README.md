@@ -44,7 +44,7 @@ How to Read Source Code
 
 **Unfamiliar concepts**
 
-1. Router (Director.js)
+None anymore
 
 **Useful links**
 
@@ -52,4 +52,4 @@ How to Read Source Code
 
 **Notes**
 
-1. Next step is to rebuild the app function-by-function until eventually I'm able to rebuild the entire app from memory.
+1. Next step is to rebuild the app function-by-function until eventually I'm able to rebuild the entire app from just looking at the application specifications document.
