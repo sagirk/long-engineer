@@ -54,7 +54,7 @@ jQuery(function ($) {
 		},
 		bindEvents: function () {
 			$('#new-todo').on('keyup', this.create.bind(this));
-			$('#toggle-all').on('click', this.toggleAll.bind(this));
+			$('#toggle-all').on('change', this.toggleAll.bind(this));
 			$('#footer').on('click', '#clear-completed', this.destroyCompleted.bind(this));
 			$('#todo-list')
 				.on('change', '.toggle', this.toggle.bind(this))
@@ -133,13 +133,14 @@ jQuery(function ($) {
 			}
 		},
 		create: function (e) {
+			// Make sure to .trim() the input and then check that it's not empty before creating a new todo.
 			var $input = $(e.target);
 			var val = $input.val().trim();
 
 			if (e.which !== ENTER_KEY || !val) {
 				return;
 			}
-
+			// Pressing Enter creates the todo, appends it to the todo list, and clears the input.
 			this.todos.push({
 				id: util.uuid(),
 				title: val,
@@ -155,16 +156,18 @@ jQuery(function ($) {
 			this.todos[i].completed = !this.todos[i].completed;
 			this.render();
 		},
+		// Switch to editing mode
 		edit: function (e) {
 			var $input = $(e.target).closest('li').addClass('editing').find('.edit');
 			$input.val($input.val()).focus();
 		},
+		// Switch out of editing mode
 		editKeyup: function (e) {
 			if (e.which === ENTER_KEY) {
 				e.target.blur();
 			}
 
-			if (e.which === ESCAPE_KEY) {
+			if(e.which === ESCAPE_KEY) {
 				$(e.target).data('abort', true).blur();
 			}
 		},
@@ -180,7 +183,7 @@ jQuery(function ($) {
 
 			if ($el.data('abort')) {
 				$el.data('abort', false);
-			} else {
+			}	else {
 				this.todos[this.indexFromEl(el)].title = val;
 			}
 
